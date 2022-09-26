@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from '../screens/Home';
 import TabNavigator from './TabNavigator';
-import addActor from '../screens/AddActor';
+import AddActor from '../screens/AddActor';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +17,7 @@ const Router = props => {
           options={{headerShown: false}}
         />
         <Stack.Screen name={'Enter FilmCollector!'} component={TabNavigator}/>
-        <Stack.Screen name={'Add Actor'} component={addActor}/>
+        <Stack.Screen name={'Add Actor'} component={AddActor}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

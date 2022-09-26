@@ -9,7 +9,7 @@ const FilmsScreen = props => {
         <View style={styles.bottom}>
             <TouchableOpacity 
             style={styles.button}
-            onPress={() => console.log('Add Films!')}>
+            onPress={() => console.log('Add Film')}>
                 <Text style={styles.buttonText}>Add Film</Text>
             </TouchableOpacity>
         </View>

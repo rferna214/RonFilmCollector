@@ -31,7 +31,7 @@ const HomeScreen = () => {
       <Pressable
           style={styles.button}
           onPress={() => navigation.navigate('Enter FilmCollector!')}>
-          <Text style={styles.buttonText}>Start Shopping!</Text>
+          <Text style={styles.buttonText}>Enter FilmCollector!</Text>
         </Pressable>
       </View>
     </View>

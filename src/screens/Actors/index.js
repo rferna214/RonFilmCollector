@@ -6,7 +6,7 @@ import styles from './styles';
 
 import { openDatabase } from "react-native-sqlite-storage";
 
-const filmCollectorDB = openDatabase({name: 'filmCollector.db'});
+const filmCollectorDB = openDatabase({name: 'FilmCollector.db'});
 const actorsTableName = 'actors';
 
 const ActorsScreen = props => {
@@ -35,11 +35,11 @@ const ActorsScreen = props => {
               // loop through the rows
               for (let i = 0; i < len; i++){
                 // push a row of data at a time onto the results array
-                let actor = res.rows.actor(i);
+                let item = res.rows.item(i);
                 results.push({
-                  id: actor.id,
-                  firstName: actor.firstName,
-                  lastName: actor.lastName,
+                  id: item.id,
+                  firstName: item.firstName,
+                  lastName: item.lastName,
                 });
               }
               // assign results array to lists state variable
@@ -64,8 +64,8 @@ const ActorsScreen = props => {
       <View>
         <FlatList 
         data={actors}
-        renderItem={({actor}) => <Actor post={actor} />}
-        keyExtractor={actor => actor.id}
+        renderItem={({item}) => <Actor post={item} />}
+        keyExtractor={item => item.id}
         />
       </View>
         <View style={styles.bottom}>

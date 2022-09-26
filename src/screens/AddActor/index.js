@@ -9,8 +9,8 @@ const AddActor = props => {
 
     const navigation = useNavigation();
 
-    const [firstName, setfirstName] = useState('');
-    const [lastName, setlastName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
 
     const onActorAdd = () => {
         if(!firstName){
@@ -22,7 +22,7 @@ const AddActor = props => {
             return;
         }
         try {
-            database.addActors(firstName,lastName);
+            database.addActor(firstName,lastName);
         } catch (error){
             console.log('Error adding actors '+ error);
         }
@@ -35,7 +35,7 @@ const AddActor = props => {
         <View style={styles.topContainer}>
             <TextInput
                 value={firstName}
-                onChangeText={value => setfirstName(value)}
+                onChangeText={value => setFirstName(value)}
                 style={styles.firstname}
                 clearButtonMode={'while-editing'}
                 placeholder={'Enter First Name'}
@@ -44,7 +44,7 @@ const AddActor = props => {
             />
             <TextInput
                 value={lastName}
-                onChangeText={value => setlastName(value)}
+                onChangeText={value => setLastName(value)}
                 style={styles.lastname}
                 clearButtonMode={'while-editing'}
                 placeholder={'Enter Last Name'}

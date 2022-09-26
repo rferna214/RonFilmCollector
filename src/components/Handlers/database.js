@@ -1,7 +1,7 @@
 
 import { openDatabase } from "react-native-sqlite-storage";
 
-const filmCollectorDB = openDatabase({name: 'filmCollector.db'});
+const filmCollectorDB = openDatabase({name: 'FilmCollector.db'});
 const actorsTableName = 'actors';
 
 module.exports = {
@@ -31,9 +31,9 @@ module.exports = {
     },
 
     // declare function that will insert a row into the lists table
-    AddActors: async function (firstName, lastName){
+    addActor: async function (firstName, lastName){
         // declare a transaction that will execute an SQL statement
-        (await actorDB).transaction(txn => {
+        (await filmCollectorDB).transaction(txn => {
             // execute the SQL
             txn.executeSql(
                 `INSERT INTO ${actorsTableName} (firstName, lastName) VALUES ("${firstName}", "${lastName}"`,
@@ -41,7 +41,7 @@ module.exports = {
                     [],
                     // callback function to handle results of SQL query
                      () => {
-                    console.log(firstName+ lastName + ' added successfully');
+                    console.log(firstName+" "+ lastName + ' added successfully');
                 },
                 error => {
                     console.log('Error adding actors '+ error.message);
